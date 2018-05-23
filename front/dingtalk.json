@@ -1,0 +1,9 @@
+{
+    "name": "DingTalk",
+    "slug": "dingtalk",
+    "description": "Integrate Taiga with Dingtalk (https://dingtalk.com)",
+    "type": "admin",
+    "module": "taigaContrib.dingtalk",
+    "template": "/plugins/dingtalk/dingtalk.html",
+    "js": "/plugins/dingtalk/dingtalk.js"
+}

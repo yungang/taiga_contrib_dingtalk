@@ -1,0 +1,24 @@
+{% if obj_type == "epic" %}
+    {% set final_url = resolve_front_url("epic", obj.project.slug, obj.ref) %}
+    {{ _(" **创建了新史诗：** ") }} [#{{obj.ref}}: {{obj.subject|safe}}]({{final_url}})
+{% elif obj_type == "relateduserstory" %}
+    {% set userstory_url = resolve_front_url("userstory", obj.project.slug, obj.user_story.ref) %}
+    {% set epic_url = resolve_front_url("epic", obj.project.slug, obj.epic.ref) %}
+    在史诗 [#{{obj.epic.ref}}: {{obj.epic.subject|safe}}]({{epic_url}})中{{ _(" **关联了新用户故事：** ") }} [#{{obj.user_story.ref}}: {{obj.user_story.subject|safe}}]({{userstory_url}}) 
+{% elif obj_type == "issue" %}
+    {% set final_url = resolve_front_url("issue", obj.project.slug, obj.ref) %}
+    {{ _(" **创建了新问题：** ") }} [#{{obj.ref}}: {{obj.subject|safe}}]({{final_url}})
+{% elif obj_type == "task" %}
+    {% set final_url = resolve_front_url("task", obj.project.slug, obj.ref) %}
+    {{ _(" **创建了新任务：** ") }} [#{{obj.ref}}: {{obj.subject|safe}}]({{final_url}})
+{% elif obj_type == "userstory" %}
+    {% set final_url = resolve_front_url("userstory", obj.project.slug, obj.ref) %}
+    {{ _(" **创建了新用户故事：** ") }} [#{{obj.ref}}: {{obj.subject|safe}}]({{final_url}})
+{% elif obj_type == "wikipage" %}
+    {% set final_url = resolve_front_url("wiki", obj.project.slug, obj.slug) %}
+    {{ _(" **创建了新维基页面：** ") }} [{{obj.slug|safe}}]({{final_url}})
+{% elif obj_type == "milestone" %}
+    {% set final_url = resolve_front_url("taskboard", obj.project.slug, obj.slug) %}
+    {{ _(" **创建了新冲刺：** ") }} [{{obj.name|safe}}]({{final_url}})
+    from: *{{obj.estimated_start}}* to: *{{ obj.estimated_finish }}*
+{% endif %}

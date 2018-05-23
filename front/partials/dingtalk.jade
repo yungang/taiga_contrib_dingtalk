@@ -1,0 +1,191 @@
+div(contrib-dingtalk-webhooks, ng-controller="ContribDingtalkAdminController as ctrl")
+    header
+        h1
+            span.project-name {{::project.name}}
+            span.green {{::sectionName}}
+
+    form
+        label(for="url") Dingtalk webhook url
+        div.contrib-form-wrapper
+            fieldset.contrib-input
+                input(
+                    type="text"
+                    name="url"
+                    ng-model="dingtalkhook.url"
+                    placeholder="Dingtalk webhook url"
+                    id="url"
+                    data-type="url"
+                )
+            fieldset.contrib-test(ng-show="dingtalkhook.id")
+                a.button-gray(href="", title="Test", ng-click="ctrl.testHook()")
+                    span Test
+        label(for="channel") Dingtalk webhook channel
+        div.contrib-form-wrapper
+            fieldset.contrib-input
+                input(
+                    type="text"
+                    name="channel"
+                    ng-model="dingtalkhook.channel"
+                    placeholder="#dingtalkchannel"
+                    id="channel"
+                )
+
+        fieldset
+            h2 Notify Epics
+            div.check-item
+                span Create
+                div.check
+                    input(type="checkbox" name="notification" ng-model="dingtalkhook.notify_epic_create")
+                    div
+                    span.check-text.check-yes(translate="COMMON.YES")
+                    span.check-text.check-no(translate="COMMON.NO")
+
+            div.check-item
+                span Change
+                div.check
+                    input(type="checkbox" name="notification" ng-model="dingtalkhook.notify_epic_change")
+                    div
+                    span.check-text.check-yes(translate="COMMON.YES")
+                    span.check-text.check-no(translate="COMMON.NO")
+
+            div.check-item
+                span Delete
+                div.check
+                    input(type="checkbox" name="notification" ng-model="dingtalkhook.notify_epic_delete")
+                    div
+                    span.check-text.check-yes(translate="COMMON.YES")
+                    span.check-text.check-no(translate="COMMON.NO")
+
+        fieldset
+            h2 Notify Epics related user stories
+            div.check-item
+                span Create
+                div.check
+                    input(type="checkbox" name="notification" ng-model="dingtalkhook.notify_relateduserstory_create")
+                    div
+                    span.check-text.check-yes(translate="COMMON.YES")
+                    span.check-text.check-no(translate="COMMON.NO")
+
+            div.check-item
+                span Delete
+                div.check
+                    input(type="checkbox" name="notification" ng-model="dingtalkhook.notify_relateduserstory_delete")
+                    div
+                    span.check-text.check-yes(translate="COMMON.YES")
+                    span.check-text.check-no(translate="COMMON.NO")
+
+        fieldset
+            h2 Notify User Stories
+            div.check-item
+                span Create
+                div.check
+                    input(type="checkbox" name="notification" ng-model="dingtalkhook.notify_userstory_create")
+                    div
+                    span.check-text.check-yes(translate="COMMON.YES")
+                    span.check-text.check-no(translate="COMMON.NO")
+
+            div.check-item
+                span Change
+                div.check
+                    input(type="checkbox" name="notification" ng-model="dingtalkhook.notify_userstory_change")
+                    div
+                    span.check-text.check-yes(translate="COMMON.YES")
+                    span.check-text.check-no(translate="COMMON.NO")
+
+            div.check-item
+                span Delete
+                div.check
+                    input(type="checkbox" name="notification" ng-model="dingtalkhook.notify_userstory_delete")
+                    div
+                    span.check-text.check-yes(translate="COMMON.YES")
+                    span.check-text.check-no(translate="COMMON.NO")
+
+        fieldset
+            h2 Notify Tasks
+            div.check-item
+                span Create
+                div.check
+                    input(type="checkbox" name="notification" ng-model="dingtalkhook.notify_task_create")
+                    div
+                    span.check-text.check-yes(translate="COMMON.YES")
+                    span.check-text.check-no(translate="COMMON.NO")
+
+            div.check-item
+                span Change
+                div.check
+                    input(type="checkbox" name="notification" ng-model="dingtalkhook.notify_task_change")
+                    div
+                    span.check-text.check-yes(translate="COMMON.YES")
+                    span.check-text.check-no(translate="COMMON.NO")
+
+            div.check-item
+                span Delete
+                div.check
+                    input(type="checkbox" name="notification" ng-model="dingtalkhook.notify_task_delete")
+                    div
+                    span.check-text.check-yes(translate="COMMON.YES")
+                    span.check-text.check-no(translate="COMMON.NO")
+
+        fieldset
+            h2 Notify Issues
+            div.check-item
+                span Create
+                div.check
+                    input(type="checkbox" name="notification" ng-model="dingtalkhook.notify_issue_create")
+                    div
+                    span.check-text.check-yes(translate="COMMON.YES")
+                    span.check-text.check-no(translate="COMMON.NO")
+
+            div.check-item
+                span Change
+                div.check
+                    input(type="checkbox" name="notification" ng-model="dingtalkhook.notify_issue_change")
+                    div
+                    span.check-text.check-yes(translate="COMMON.YES")
+                    span.check-text.check-no(translate="COMMON.NO")
+
+            div.check-item
+                span Delete
+                div.check
+                    input(type="checkbox" name="notification" ng-model="dingtalkhook.notify_issue_delete")
+                    div
+                    span.check-text.check-yes(translate="COMMON.YES")
+                    span.check-text.check-no(translate="COMMON.NO")
+
+        fieldset
+            h2 Notify Wiki
+            div.check-item
+                span Create
+                div.check
+                    input(type="checkbox" name="notification" ng-model="dingtalkhook.notify_wikipage_create")
+                    div
+                    span.check-text.check-yes(translate="COMMON.YES")
+                    span.check-text.check-no(translate="COMMON.NO")
+
+            div.check-item
+                span Change
+                div.check
+                    input(type="checkbox" name="notification" ng-model="dingtalkhook.notify_wikipage_change")
+                    div
+                    span.check-text.check-yes(translate="COMMON.YES")
+                    span.check-text.check-no(translate="COMMON.NO")
+
+            div.check-item
+                span Delete
+                div.check
+                    input(type="checkbox" name="notification" ng-model="dingtalkhook.notify_wikipage_delete")
+                    div
+                    span.check-text.check-yes(translate="COMMON.YES")
+                    span.check-text.check-no(translate="COMMON.NO")
+
+
+        button(type="submit", class="hidden")
+        a.button-green.submit-button(href="", title="Save", ng-click="ctrl.updateOrCreateHook(dingtalkhook)")
+            span Save
+
+    a.help-button(
+        href="https://github.com/yungang/taiga_contrib_dingtalk"
+        target="_blank"
+    )
+        tg-svg(svg-icon="icon-question")
+        span Do you need help? Check out our support page!

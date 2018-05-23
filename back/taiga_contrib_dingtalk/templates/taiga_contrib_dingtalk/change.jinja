@@ -1,0 +1,20 @@
+{% if obj_type == "epic" %}
+    {% set final_url = resolve_front_url("epic", obj.project.slug, obj.ref) %}
+    {{ _(" **修改了史诗** ") }} [#{{obj.ref}}: {{obj.subject|safe}}]({{final_url}})
+{% elif obj_type == "issue" %}
+    {% set final_url = resolve_front_url("issue", obj.project.slug, obj.ref) %}
+    {{ _(" **修改了问题：** ") }} [#{{obj.ref}}: {{obj.subject|safe}}]({{final_url}})
+{% elif obj_type == "task" %}
+    {% set final_url = resolve_front_url("task", obj.project.slug, obj.ref) %}
+    {{ _(" **修改了任务** ") }} [#{{obj.ref}}: {{obj.subject|safe}}]({{final_url}})
+{% elif obj_type == "userstory" %}
+    {% set final_url = resolve_front_url("userstory", obj.project.slug, obj.ref) %}
+    {{ _(" **修改了用户故事** ") }} [#{{obj.ref}}: {{obj.subject|safe}}]({{final_url}})
+{% elif obj_type == "wikipage" %}
+    {% set final_url = resolve_front_url("wiki", obj.project.slug, obj.slug) %}
+    {{ _(" **修改了维基页面：** ") }} [#{{obj.ref}}: {{obj.subject|safe}}]({{final_url}})
+{% elif obj_type == "milestone" %}
+    {% set final_url = resolve_front_url("taskboard", obj.project.slug, obj.slug) %}
+    {{ _(" **修改了冲刺：** ") }} [#{{obj.ref}}: {{obj.subject|safe}}]({{final_url}})
+{% endif %}
+{% if comment %} *{{ change.user.name }}* 提交了评论： {{ comment|safe }}{% endif %}
