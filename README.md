@@ -66,3 +66,4 @@ How to use
 ----------
 
 Follow the instructions on our support page [Taiga.io Support > Contrib Plugins > Slack integration](https://tree.taiga.io/support/contrib-plugins/slack-integration/ "Taiga.io Support > Contrib Plugins > Slack integration")
+And [Dingtalk robot settings](https://open-doc.dingtalk.com/docs/doc.htm?spm=a219a.7629140.0.0.2xxAkv&treeId=257&articleId=105735&docType=1)
