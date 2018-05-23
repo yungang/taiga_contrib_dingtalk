@@ -19,16 +19,6 @@ div(contrib-dingtalk-webhooks, ng-controller="ContribDingtalkAdminController as 
             fieldset.contrib-test(ng-show="dingtalkhook.id")
                 a.button-gray(href="", title="Test", ng-click="ctrl.testHook()")
                     span Test
-        label(for="channel") Dingtalk webhook channel
-        div.contrib-form-wrapper
-            fieldset.contrib-input
-                input(
-                    type="text"
-                    name="channel"
-                    ng-model="dingtalkhook.channel"
-                    placeholder="#dingtalkchannel"
-                    id="channel"
-                )
 
         fieldset
             h2 Notify Epics
